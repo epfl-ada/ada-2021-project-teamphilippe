@@ -7,14 +7,28 @@ aware of the potential biases in the data.
 
 
 The goal is to shed light on the hidden biases of the dataset that can greatly influence the results of a study
-that would use this dataset to train, e.g. ML models or compute statistics. In particular, the biases we want to
-investigate are related to :
+that would use this dataset to train, e.g. ML models or compute statistics. In particular, we would like to 
+analyse whether sentiments in quotes of certain groups of people are rather positive or negative and how this evolves
+over time. We will look at different subsets of people by characterizing them according to :
 - Sex of the author
 - Origin of the author
 - Age of the author
 
 
 ## Research Questions
+- Exploratory data analysis :
+  - Are the specified groups equally represented in the dataset ?
+  -  
+- Sentiment analysis :
+  - What are the sentiment (positive, negative, neutral) of each of the quotes in the dataset ?
+  - 
+- Clustering of the groups :
+  - How can we cluster the people according to their characteristics ?
+  - Are there significant trends in the sentiments of the quotes inside each group ?
+  - Are there trends where authors belonging to a certain group write negative/positive quotes about persons belonging
+  to another group ?
+
+OLD, to be removed :
 For each of the above cited characterization of people, we would like to answer the following questions :
 - Are these groups of people equally represented in the dataset ? (Exploratory data analyis)
 - Do the sentiments in quotes of certain groups of are rather negative or positive and how does that 

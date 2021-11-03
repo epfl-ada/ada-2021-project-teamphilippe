@@ -1,41 +1,60 @@
 # Project : Milestone 2
 
 ## Abstract
-These days, machine learning and data are more and more used to make decisions and studies. To avoid making 
-discriminatory decisions against certain group of people or draw negatively influenced results, it is therefore crucial that people using these data are 
-aware of the potential biases in the data.
+These days, machine learning are more and more used on found data, that is data created naturally by the human kind and not during an experiment. Quotebank is an example of such data and contains a lot of informations about what people think and how they feel over time. 
 
+Our main goal will be to determine what are the sentiments (positive/negative) of different subgroups of the population and how it evolves over time.
 
-The goal is to shed light on the hidden biases of the dataset that can greatly influence the results of a study
-that would use this dataset to train, e.g. ML models or compute statistics. In particular, we would like to 
-analyse whether sentiments in quotes of certain groups of people are rather positive or negative and how this evolves
-over time. We will look at different subsets of people by characterizing them according to :
-- Sex of the author
-- Origin of the author
-- Age of the author
+We will start by shedding light on the hidden biases in our dataset that can influence the results of our study. 
+
+Then, we will determine whether the sentiments in the quotes of the dataset are postively or negatively biased and perform the same analysis on some  subgroups. Subgroups can be defined according to several criteria, e.g.  age, origin or sex of the authors. 
+
+Furthermore, we will see how the sentiments in these subgroups evolves over time.
 
 
 ## Research Questions
+We will split our research questions into the four main parts of the project. 
+
 - Exploratory data analysis :
-  - Are the specified groups equally represented in the dataset ? What are their distributions ?
   - Do many quotes miss an author ?
-  - Are the quotes equally distributed over time ? Are there spikes corresponding to particular events ?
-  - For our idea, we really need the author of the quotes, so we will remove the quotes without a predicted author.
-  - The quotes where the author is cited in it is likely to be misclassified. Indeed, it is unlikely that the author will
-  speak of her/him at the third person.
-  - Are our characterization of groups meaningful ? For example, if we change this characterization, does it change
-  our conclusion/interpretation in a significant way ?
+  - Do many quotes output a possible speaker with a probability less than 0.5 ? 
+  - Are the quotes equally distributed over time ? Are there spikes for the number of quotes at certain dates or periods corresponding to particular events ?
+  - What is the distribution of the number of quotes per author ?
+
+- Clustering of the groups :
+  - Which clusters can we make depending on the people characteristics ?
+  - Are the specified groups equally represented in the dataset ? What are their distributions ?
+  - Are our characterization of groups meaningful ? For example, if we change this characterization, does it change our conclusion/interpretation in a significant way ? For instance, suppose we quantised the age of people into ranges such as [0-25], [26-65],[66-100]. Does changing the ranges to [0-30],[31-70], [71-100] significantly change our results or not ?  
+  - Is the number of author in each group balanced ? Is the number of quotes per author balanced ? 
+  
 - Sentiment analysis :
   - What are the sentiment (positive, negative, neutral) of each of the quotes in the dataset ?
-  - Is the reported sentiment (negative/positive) really significant in average in the group ?
-  - Is the number of author in each group balanced ? As before, maybe there is only one very negative person that says all the bad things.
-  - Is there a significant trend where the authors talk negatively/positively in a specific year ? (for instance, with covid, we suspect to have a lot more "negative" quotes as there was lockdown, restriction, etc..)
-- Named Entity Recognition inside the quotes :
-  - Do many quotes have as subject a person ? I.e. the quotes gives an opinion about someone.
-  - Who are the people (if any) subjects in the quotes and to what group do they belong ? (Can use a library called spaCy which is a Named Entity Recognition
-  tool, see here https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da)
-- Clustering of the groups :
-  - How can we cluster the people according to their characteristics ?
-  - Are there significant trends in the sentiments of the quotes inside each group ?
-  - Are there trends where authors belonging to a certain group write negative/positive quotes about persons belonging
-  to another group ?
+  - Is the reported sentiment (negative/positive) really significant in average in the different subgroups we created ?
+  - Is there a significant trend where the authors talk negatively/positively in a specific year ? 
+  - Are there significant trends in the sentiments of the quotes inside each group (e.g. People over 70 always talking negatively) ?
+
+- Named Entity Recognition inside the quotes : 
+  - Do many quotes have as subject a person ? I.e. do the quotes give an opinion about someone ?
+  - Count the number of times one person appear in all the quotes. What is this distribution over all the person mentionned in the quotes ?
+  - Who are the people (if any) subjects in the quotes and to what group do they belong ? 
+  - Are negative/positive quotes talking about someone else ?
+  - Are there trends where authors belonging to a certain group write negative/positive quotes about persons belonging to another group ? 
+
+
+  
+## Additional datasets
+In addition to the given dataset, we will use Wikidata in order to extract informations about the quoter from the Quotebank dataset (for instance the age, sex and origin). As the whole entity dump from the Wikidata is a file of 70GB, we are not sure (for the moment) whether we will download the whole dump and keep only what we want or if we will first create a list of all the names in the dataset and simply query Wikidata API to get the information we need.
+  
+## Methods
+
+- Data cleaning: 
+For the data cleaning part, we already thought of multiple ways to tackle this task : 
+    - For our purposes, we want to cluster people according to personal characteristics (sex, age, origin, etc). Therefore, if a quote doesn't have any author, we will have to remove this quote. 
+    - The quotes where the author is cited in it is likely to be misclassified. Indeed, it is unlikely that the author will speak of her/him at the third person. As a consequence, we will also remove these quotes.
+- Sentiment analysis: 
+For this part of the project, we will use [a sentiment analysis classifier from the NLTK library](https://www.nltk.org/howto/sentiment.html). It takes a text (one of our quotes) as input and outputs the probabilities of the quote to be positive, neutral or negative.
+- Named Entity Recognition:
+In order to extract the names quoted in our dataset, we will use natural language processing with the NLTK library, in combinanation with an other library called spaCy, a Named Entity Recognition tool. The method we will follow to is described [here](https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da). This model should be able to output who are the people mentionned in the quotes (if any) and extract those containing at least one person to perform analyses.  
+
+## Timeline and Organisation
+  

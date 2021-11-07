@@ -58,3 +58,12 @@ In order to extract the names quoted in our dataset, we will use natural languag
 
 ## Timeline and Organisation
   
+Cyrille :
+- 27.11-04.12 :
+  - Use the VADER Sentiment Intensity Analyzer from NLTK (https://www.nltk.org/api/nltk.sentiment.vader.html)
+to predict whether a quote is positive/negative/neutral, for each quote in the dataset.
+  - Compare the main sentiments over the years.
+- 4.12-11.12 :
+  - Put things together with the "clustering of people" part to detect main sentiments in different groups of authors.
+  - Observe how these groups sentiments evolved over the years and try to interpret them.
+- 11.12-17.12 : Data story, writing the final notebook.

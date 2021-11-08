@@ -11,9 +11,11 @@ Then, we will determine whether the sentiments in the quotes of the dataset are 
 
 Furthermore, we will see how the sentiments in these subgroups evolves over time.
 
+## Research questions
 
-## Research Questions
-We will split our research questions into the four main parts of the project. 
+
+## Subgoals
+To be able to answer our research questions, we defined different subgoals that will help us to make conclusions
 
 - Exploratory data analysis :
   - Do many quotes miss an author ?

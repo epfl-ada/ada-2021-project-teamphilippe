@@ -7,12 +7,16 @@ Our main goal will be to determine what are the sentiments (positive/negative) o
 
 We will start by shedding light on the hidden biases in our dataset that can influence the results of our study. 
 
-Then, we will determine whether the sentiments in the quotes of the dataset are postively or negatively biased and perform the same analysis on some  subgroups. Subgroups can be defined according to several criteria, e.g.  age, origin or sex of the authors. 
+Then, we will determine whether the sentiments in the quotes of the dataset are postively or negatively biased and perform the same analysis on some  subgroups. Subgroups can be defined according to several criteria, e.g.  age, origin or sex of authors. 
 
 Furthermore, we will see how the sentiments in these subgroups evolves over time.
 
 ## Research questions
-
+Our research questions are the following:
+- Are the quotes distributed evenly over the years and over the authors ?
+- How can we evenly group different quotes by author from the dataset ?
+- How are the sentiments distributed among different groups and over the years ?
+- Do people tend to talk positively / negatively about other people in the quotes ?
 
 ## Subgoals
 To be able to answer our research questions, we defined different subgoals that will help us to make conclusions
@@ -20,7 +24,7 @@ To be able to answer our research questions, we defined different subgoals that 
 - Exploratory data analysis :
   - Do many quotes miss an author ?
   - Do many quotes output a possible speaker with a probability less than 0.5 ? 
-  - Are the quotes equally distributed over time ? Are there spikes for the number of quotes at certain dates or periods corresponding to particular events ?
+  - Are the quotes equally distributed over time ? Are there spikes for the number of quotes corresponding to particular events ?
   - What is the distribution of the number of quotes per author ?
 
 - Clustering of the groups :
@@ -31,41 +35,60 @@ To be able to answer our research questions, we defined different subgoals that 
   
 - Sentiment analysis :
   - What are the sentiment (positive, negative, neutral) of each quote in the dataset ?
-  - Is the reported sentiment (negative/positive) really significant in average in the different subgroups we created ?
+  - Is the reported sentiment really significant in average in the different subgroups we created over the years ?
   - Is there a significant trend where the authors talk negatively/positively in a specific year ? 
   - Are there significant trends in the sentiments of the quotes inside each group (e.g. People over 70 always talking negatively) ?
+  - How does the sentiments of a particular author or subgroup evolve over time ? 
 
 - Named Entity Recognition inside the quotes : 
-  - Do many quotes have as subject a person ? I.e. do the quotes give an opinion about someone ?
-  - Count the number of times one person appears in all the quotes. What is this distribution over all the people mentionned in the quotes ?
-  - Who are the people (if any) subjects in the quotes and which group do they belong to ? 
+  - Count the number of times each person appears in the quotes. What is the distribution over all the people mentionned ?
+  - Who are the people subjects in the quotes and which group do they belong to ? 
   - Are negative/positive quotes talking about someone else ?
   - Are there trends where authors belonging to a certain group write negative/positive quotes about people belonging to another group ? 
 
-
   
 ## Additional datasets
-In addition to the given dataset, we will use Wikidata in order to extract information about the quoter from the Quotebank dataset (for instance the age, sex and origin). As the whole entity dump from the Wikidata is a file of 70GB, we are not sure (for the moment) whether we will download the whole dump and keep only what we want or if we will first create a list of all the names in the dataset and simply query Wikidata API to get the information we need.
+In addition to the given dataset, we will use a dump from Wikidata in order to extract information about the quoter from the Quotebank dataset (for instance the age, sex and origin). We will probably use the dump provided by the teaching staff.
   
 ## Methods
 
 - Data cleaning: 
-For the data cleaning part, we already thought of multiple ways to tackle this task : 
+We thought of multiple ways to tackle this task : 
     - For our purposes, we want to cluster people according to personal characteristics (sex, age, origin, etc). Therefore, if a quote doesn't have any author, we will have to remove this quote. 
-    - The quotes where the author is cited in it is likely to be misclassified. Indeed, it is unlikely that the author will speak of her/him at the third person. As a consequence, we will also remove these quotes.
+    - The quotes where the author is cited in it is likely to be misclassified. Indeed, it is unlikely that the author will speak of her/him at the third person. As a consequence, we will remove these quotes.
+- Clustering of groups:
+We will cluster the authors in different ways based on their characteristics. For each subgroup we form, we can compute the mean sentiment of this subgroup for a specific year. Then, we can compare them using T-tests to check if the mean is significantly different between the subgroups. 
 - Sentiment analysis: 
-For this part of the project, we will use [a sentiment analysis classifier from the NLTK library](https://www.nltk.org/howto/sentiment.html). It takes a text (one of our quotes) as input and outputs the probabilities of the quote to be positive, neutral or negative.
+We will use [a sentiment analysis classifier from the NLTK library](https://www.nltk.org/api/nltk.sentiment.vader.html). It takes a text (one of our quotes) as input and outputs the probabilities of the quote to be positive, neutral or negative.
 - Named Entity Recognition:
 In order to extract the names quoted in our dataset, we will use natural language processing with the NLTK library, in combination with an other library called spaCy, a Named Entity Recognition tool. The method we will follow is described [here](https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da). This model should be able to output the name of the people mentionned in the quotes (if any) and extract those containing at least one person to perform analyses.  
 
 ## Timeline and Organisation
-  
 Cyrille :
 - 27.11-04.12 :
-  - Use the VADER Sentiment Intensity Analyzer from NLTK (https://www.nltk.org/api/nltk.sentiment.vader.html)
-to predict whether a quote is positive/negative/neutral, for each quote in the dataset.
+  - Extract the sentiment of each quote using [VADER Sentiment Intensity Analyzer from NLTK](https://www.nltk.org/api/nltk.sentiment.vader.html)
   - Compare the main sentiments over the years.
-- 4.12-11.12 :
-  - Put things together with the "clustering of people" part to detect main sentiments in different groups of authors.
+- 04.12-11.12 :
+  - Detect main sentiments in different the subgroups of authors.
   - Observe how these groups sentiments evolved over the years and try to interpret them.
+- 11.12-17.12 : Data story, writing the final notebook.
+
+Alessio:
+- 27.11-04.12 :
+- 04.12-11.12 :
+- 11.12-17.12 : Data story, writing the final notebook.
+
+Florian :
+- 27.11-04.12 : 
+    - Extract names of quoted people using NLTK and Spacy.
+    - Count the number of quotes where the name of each person appears.
+- 04.12-11.12 : 
+    - Analyse sentiments of quotes where names appears vs no names appears.
+    - Extract quotes where these persons also are quoters.
+    - Analyse sentiments of quotes where quoters are quoted and vice versa.
+- 11.12-17.12 : Data story, writing the final notebook.
+
+Robin :
+- 27.11-04.12 :
+- 04.12-11.12 :
 - 11.12-17.12 : Data story, writing the final notebook.

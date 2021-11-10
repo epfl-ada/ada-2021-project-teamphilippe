@@ -90,5 +90,8 @@ Florian :
 
 Robin :
 - 27.11-04.12 :
+    - Exploratory data analysis.
+    - Find other unvalide quots.
 - 04.12-11.12 :
+    - Generate plots and histograms for a representation.
 - 11.12-17.12 : Data story, writing the final notebook.

@@ -1,68 +1,36 @@
 # Project : Milestone 2
+## TITLE : TODO
 
 ## Abstract
-Machine learning are more and more used on found data, that is data created naturally by the human kind and not during an experiment.
-Quotebank is an example of such data and can contain a lot of information about what people think and how they feel over time. 
 
-Our main goal will be to determine what are the sentiments (positive/negative) of different subgroups of the population and how it evolves over time.
-
-We will start by shedding light on the hidden biases in our dataset that can influence the results of our study. 
-
-Then, we will determine whether the sentiments in the quotes are positively or negatively biased and perform the same analysis on some  subgroups.
-Subgroups can be defined according to several criteria, e.g.  age, origin or sex of authors. 
-
-Furthermore, we will see how the sentiments in these subgroups evolves over time.
+How does the success of someone's career relate to the opinions of other people ? Can we estimate whether the 
+career of a public person is rather at its lowest or its highest only given the quotes mentioning this person 
+or her/his companies, etc over time ? Also, can we clearly identify "types" of people (e.g. political orientation, etc) systematically
+talk negatively/positively about this person ? Let's take Elon Musk for example. Few years ago, Tesla and SpaceX were not in a very good shape and we could imagine that
+quotes about him or his companies were expressing rather negative opinions. But is it really what the data tell us ?
+We will look at the quotes mentioning Elon Musk or its companies and try to identify the different cluster of 
+people that are criticizing him or supporting him. Throughout the README, we take Elon Musk as example but this easily generalizes to other personalities (such as Mark Zuckerberg).
 
 ## Research questions
-Our research questions are the following:
-- Are the quotes distributed evenly over the years and over the authors ?
-- How can we evenly group different quotes by similar authors from the dataset ?
-- How are the sentiments distributed among different groups and over the years ?
-- Do people tend to talk positively / negatively about other people in the quotes ?
+
+- How do the sentiments in the quotes mentioning Elon Musk or his companies over time ?
+- Among people criticizing/supporting Elon Musk, can we identify specific groups of people ? For example,
+  are the people criticizing him mainly old, or coming from specific locations ?
+- Are the opinions of other people correlated with the actual success of his career/his companies ?
+- Are the opinions of other people about Tesla (or SpaceX) correlated with the opinions about Musk himself ? I.e.
+  is Elon Musk viewed by the public "only" through his companies ?
+- Optional : Do the above analysis also apply to personalities from other domain, such as the politics and Trump ?
 
 ## Sub-goals
-To be able to answer our research questions, we defined different subgoals that will help us to make conclusions.
 
-- Exploratory data analysis :
-  - Do many quotes miss an author ?
-  - Do many quotes output a possible speaker with a probability less than 0.5 ? 
-  - Are the quotes equally distributed over time ? Are there spikes for the number of quotes corresponding to particular events ?
-  - What is the distribution of the number of quotes per author ?
+TODO
 
-- Clustering of the groups :
-  - Which clusters can we make depending on the people characteristics ?
-  - Are the specified groups equally represented in the dataset ?
-  - Are our characterization of groups meaningful ? I.e if we change this characterization, does it change our conclusion/interpretation in a significant way ?
-    For instance, suppose we quantized the age of people into ranges such as [0-25], [26-65], [66-100]. Does changing the ranges to [0-30], [31-70], [71-100] significantly change our results or not ?  
-  - Is the number of authors in each group balanced ?
-  
-- Sentiment analysis :
-  - What are the sentiment (positive, negative, neutral) of each quote ?
-  - Is the reported sentiment really significant in average in the different subgroups we created over the years ?
-  - Is there a significant trend where the authors talk negatively/positively in a specific year ? 
-  - Are there significant trends in the sentiments of the quotes inside each group (e.g. People over 70 always talking negatively) ?
-  - How does the sentiments of a particular author or subgroup evolve over time ? 
 
-- Named Entity Recognition inside the quotes : 
-  - Count the number of times each person appears in the quotes. What is the distribution over all the people mentioned ?
-  - Who are the people subjects in the quotes and which group do they belong to ? 
-  - Are the quotes talking about someone significantly positive or negative ?
-  - Are there trends where authors belonging to a certain group write negative/positive quotes about people belonging to another group ? 
-
-  
 ## Additional datasets
 In addition to the given dataset, we will use Wikidata parquet file provided in order to extract information about the quoter from the Quotebank dataset (for instance the age, sex and origin).
   
 ## Methods
-
-- Data cleaning:
-We thought of multiple ways to tackle this : 
-    - For our purposes, we want to cluster people according to personal characteristics (sex, age, origin, etc).
-      Therefore, if a quote doesn't have any author, we will remove this quote. 
-    - The quotes where the author is cited in it is likely to be misclassified. Indeed, it is unlikely that the author will speak of her/him at the third person.
-      So we will remove these quotes.
-- Clustering of groups:
-We will cluster the authors in different ways based on their characteristics. For each subgroup we form, we can compute the mean sentiment of this subgroup for a specific year. Then, we can compare them using T-tests to check if the mean is significantly different between the subgroups. 
+ 
 - Sentiment analysis:
 We will use [a sentiment analysis classifier from the NLTK library](https://www.nltk.org/api/nltk.sentiment.vader.html). It takes a text as input and outputs the probabilities of the quote to be positive, neutral or negative.
 - Named Entity Recognition:
@@ -74,29 +42,20 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
 ## Timeline and Organisation
 Cyrille :
 - 27.11-04.12 :
-  - Extract the sentiment of each quote using [VADER Sentiment Intensity Analyzer from NLTK](https://www.nltk.org/api/nltk.sentiment.vader.html)
+  - Extract the sentiment of each quote using [VADER Sentiment Intensity Analyzer from NLTK](https://www.nltk.org/api/nltk.sentiment.vader.html).
   - Compare the main sentiments over the years.
 - 04.12-11.12 :
-  - Detect main sentiments in different groups of authors.
-  - Observe how these groups sentiments evolved over the years and try to interpret them.
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Alessio:
 - 27.11-04.12 :
-  - Try different ways to cluster authors.
 - 04.12-11.12 :
-  - Detect main sentiments in different groups of authors.
-  - Statistically test whether changing the criterion for clustering change the main sentiments in groups
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Florian :
 - 27.11-04.12 : 
     - Extract names of quoted people using NLTK and Spacy.
-    - Count the number of quotes where the name of each person appears.
-- 04.12-11.12 : 
-    - Analyse sentiments of quotes where names appears vs no names appears.
-    - Extract quotes where these persons also are quoters.
-    - Analyse sentiments of quotes where quoters are quoted and vice versa.
+- 04.12-11.12 :
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Robin :
@@ -104,5 +63,4 @@ Robin :
     - Exploratory data analysis.
     - Find other non-valid quotes.
 - 04.12-11.12 :
-    - Generate plots and histograms for a representation.
 - 11.12-17.12 : Data story, writing the final notebook.

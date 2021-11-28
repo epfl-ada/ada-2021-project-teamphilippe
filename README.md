@@ -1,7 +1,7 @@
 # Project : Milestone 2
-## TITLE : TODO
+# Are the opinions in news quotes related to the success of a company or entrepreneur ?
 
-## Abstract
+## Abstract (to be improved into something more convincing)
 
 How does the success of someone's career relate to the opinions of other people ? Can we estimate whether the 
 career of a public person is rather at its lowest or its highest only given the quotes mentioning this person 
@@ -19,6 +19,7 @@ people that are criticizing him or supporting him. Throughout the README, we tak
 - Are the opinions of other people correlated with the actual success of his career/his companies ?
 - Are the opinions of other people about Tesla (or SpaceX) correlated with the opinions about Musk himself ? I.e.
   is Elon Musk viewed by the public "only" through his companies ?
+- Optional : Can we identify authors whose opinions have great influence on the stock prices of the companies ?
 - Optional : Do the above analysis also apply to personalities from other domain, such as the politics and Trump ?
 
 ## Sub-tasks
@@ -30,12 +31,17 @@ people that are criticizing him or supporting him. Throughout the README, we tak
 - Aggregate the stock values of Tesla by month (to be verified).
 - Plots the relations of the stock values and the evolution of the opinions about Elon Musk and also
   the number of quotes made about him during each month.
+- Try to identify specific authors (or group of authors) whose opinions influence a lot the future stock prices
+  of e.g. Tesla.
 - Differentiate the quotes talking about Tesla/SpaceX vs Elon Musk itself. Determine whether the opinions
   in each of these groups evolve similarly over time.
 
 
 ## Additional datasets
-In addition to the given dataset, we will use Wikidata parquet file provided in order to extract information about the quoter from the Quotebank dataset (for instance the age, sex and origin).  
+
+In addition to the given dataset, we will use:
+- Wikidata parquet file provided in order to extract information about quoters from the Quotebank dataset (for instance the age, sex and origin).
+- A dataset of stock prices coming from nasdaq.com (for instance [for Tesla](https://www.nasdaq.com/market-activity/stocks/tsla/historical)) for each company owned by Elon Musk.
 
 ## Methods
  

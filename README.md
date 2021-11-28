@@ -21,14 +21,22 @@ people that are criticizing him or supporting him. Throughout the README, we tak
   is Elon Musk viewed by the public "only" through his companies ?
 - Optional : Do the above analysis also apply to personalities from other domain, such as the politics and Trump ?
 
-## Sub-goals
+## Sub-tasks
 
-TODO
+- Filter the quotes talking about Elon Musk, Tesla, SpaceX using Spacy.
+- Determine the sentiments in these quotes using NLTK.
+- Find the characteristics of the authors of these quotes, to be able to group them later on.
+- Try to identify different groups of people among the authors criticizing vs supporting him.
+- Aggregate the stock values of Tesla by month (to be verified).
+- Plots the relations of the stock values and the evolution of the opinions about Elon Musk and also
+  the number of quotes made about him during each month.
+- Differentiate the quotes talking about Tesla/SpaceX vs Elon Musk itself. Determine whether the opinions
+  in each of these groups evolve similarly over time.
 
 
 ## Additional datasets
-In addition to the given dataset, we will use Wikidata parquet file provided in order to extract information about the quoter from the Quotebank dataset (for instance the age, sex and origin).
-  
+In addition to the given dataset, we will use Wikidata parquet file provided in order to extract information about the quoter from the Quotebank dataset (for instance the age, sex and origin).  
+
 ## Methods
  
 - Sentiment analysis:

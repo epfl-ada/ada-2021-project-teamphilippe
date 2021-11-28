@@ -57,24 +57,25 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
 Cyrille :
 - 27.11-04.12 :
   - Extract the sentiment of each quote using [VADER Sentiment Intensity Analyzer from NLTK](https://www.nltk.org/api/nltk.sentiment.vader.html).
-  - Compare the main sentiments over the years.
+  - Compare and visualize the main sentiments over the years.
 - 04.12-11.12 :
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Alessio:
 - 27.11-04.12 :
+  - Prepare visualizations for the groups of authors in order to identify clusters.
 - 04.12-11.12 :
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Florian :
 - 27.11-04.12 : 
-    - Extract names of quoted people using NLTK and Spacy.
+    - Filter the quotes about Elon Musk, Tesla using NLTK and Spacy.
 - 04.12-11.12 :
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Robin :
 - 27.11-04.12 :
-    - Exploratory data analysis.
-    - Find other non-valid quotes.
+    - Add all attributes of the authors (from Wikidata).
+    - Exploratory visualizations for these new attributes.
 - 04.12-11.12 :
 - 11.12-17.12 : Data story, writing the final notebook.

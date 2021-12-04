@@ -59,6 +59,9 @@ Cyrille :
   - Extract the sentiment of each quote using [VADER Sentiment Intensity Analyzer from NLTK](https://www.nltk.org/api/nltk.sentiment.vader.html).
   - Compare and visualize the main sentiments over the years.
 - 04.12-11.12 :
+  - Load and aggregate the stock prices data.
+  - Look at correlations with the polarity scores.
+  - Prepare the website, start writing the introduction, skeleton, etc for the data story.
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Alessio:

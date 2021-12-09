@@ -68,6 +68,7 @@ Alessio:
 - 27.11-04.12 :
   - Prepare visualizations for the groups of authors in order to identify clusters.
 - 04.12-11.12 :
+  - Create custom K-medioid and automatically extract common features within clusters
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Florian :

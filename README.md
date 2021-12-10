@@ -73,8 +73,10 @@ Alessio:
 
 Florian :
 - 27.11-04.12 : 
-    - Filter the quotes about Elon Musk, Tesla using NLTK and Spacy.
+    - Filter the quotes about Elon Musk using Spacy.
 - 04.12-11.12 :
+    - Generalize extraction method to filter quotes from any person/company.
+    - Extract what entities were found in each quotes
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Robin :

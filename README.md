@@ -1,4 +1,4 @@
-# Project : Milestone 2
+# Project : Milestone 3
 # Are the opinions in news quotes related to the success of a company or entrepreneur ?
 
 ## Abstract (to be improved into something more convincing)

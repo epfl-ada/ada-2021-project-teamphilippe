@@ -52,6 +52,21 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
   The method we will follow is described [here](https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da). This model should be able to output the name of the people mentionned in the quotes (if any) and extract those containing at least one person to perform analyses.
 - We plan on finishing the exploratory data analysis and implementing the other parts at the beginning of milestone 3.
   We will apply these towards the middle/end of milestone 3 on the cleaned data.
+  
+## File structure of the project
+├── helpers                             # Compiled files (alternatively `dist`)
+      ├── exploration.py                # Functions to visualise quote features of the dataset 
+      ├── extract.py                    # Functions to perform Named Entity Recognition to extract quotes about Mark Zuckerberg and Facebook
+      ├── group_visualisations.py       # Functions to visualise grouping on attributes and clusters (Plotly and seaborn)
+      ├── group.py                      # Clusters, distance computations, pre-processing of quotes and people related functions
+      ├── regression.py                 # Functions to perform regression analysis automatically stats models as well as visualise the response of input variables with the outcomes.
+      ├── sentiment.py                  # Functions to predict, aggregate and visualise sentiments in the quotes
+      ├── stock.py                      # Functions to handle and visualise stock data
+      ├── utility.py                    # Functions to handle the whole Quotebank data set (stream processing functions), preprocess it and sample from it
+      ├── wikidata.py                   # Wikidata related functions to add speaker information to the quotes with an identified speaker
+├── TeamPhilipe-Project-Notebook.ipynb  # Notebook containing the execution of all the functions, comments and visualisations
+├── Data story                          # Save of the data story web site
+└── README.md
 
 ## Timeline and Organisation
 Cyrille :

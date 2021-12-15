@@ -62,6 +62,7 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
       ├── group.py                      # Clusters, distance computations, pre-processing of quotes and people related functions
       ├── regression.py                 # Functions to perform regression analysis automatically stats models as well as visualise the response of input variables with the outcomes.
       ├── sentiment.py                  # Functions to predict, aggregate and visualise sentiments in the quotes
+      ├── sentiment_visualisations.py   # Functions to visualise sentiment (Plotly and seaborn)
       ├── stock.py                      # Functions to handle and visualise stock data
       ├── utility.py                    # Functions to handle the whole Quotebank data set (stream processing functions), preprocess it and sample from it
       ├── wikidata.py                   # Wikidata related functions to add speaker information to the quotes with an identified speaker
@@ -85,7 +86,7 @@ Alessio:
 - 27.11-04.12 :
   - Prepare visualizations for the groups of authors in order to identify clusters.
 - 04.12-11.12 :
-  - Create custom K-medioid and automatically extract common features within clusters
+  - Create custom K-medioid and automatically extract common features within clusters.
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Florian :
@@ -93,7 +94,7 @@ Florian :
     - Filter the quotes about Elon Musk using Spacy.
 - 04.12-11.12 :
     - Generalize extraction method to filter quotes from any person/company.
-    - Extract what entities were found in each quotes
+    - Extract what entities were found in each quotes.
 - 11.12-17.12 : Data story, writing the final notebook.
 
 Robin :
@@ -101,4 +102,6 @@ Robin :
     - Add all attributes of the authors (from Wikidata).
     - Exploratory visualizations for these new attributes.
 - 04.12-11.12 :
+    - Create method to extract the continents and group the Academic degree 
+    - Create custom K-medioid and plot common features within clusters.
 - 11.12-17.12 : Data story, writing the final notebook.

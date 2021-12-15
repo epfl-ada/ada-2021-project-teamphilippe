@@ -54,6 +54,7 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
   We will apply these towards the middle/end of milestone 3 on the cleaned data.
   
 ## File structure of the project
+```
 ├── helpers                             # Compiled files (alternatively `dist`)
       ├── exploration.py                # Functions to visualise quote features of the dataset 
       ├── extract.py                    # Functions to perform Named Entity Recognition to extract quotes about Mark Zuckerberg and Facebook
@@ -67,6 +68,7 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
 ├── TeamPhilipe-Project-Notebook.ipynb  # Notebook containing the execution of all the functions, comments and visualisations
 ├── Data story                          # Save of the data story web site
 └── README.md
+```
 
 ## Timeline and Organisation
 Cyrille :

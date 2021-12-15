@@ -1,7 +1,7 @@
 # Project : Milestone 3
 # Are the opinions in news quotes related to the success of a company or entrepreneur ?
 
-## Abstract (to be improved into something more convincing)
+## Abstract 
 
 With the world getting more and more connected, in particular the domain of news and journalism, we get access to opinions of huge amount of people. These opinions can express negative, positive or simply neutral sentiments about a subject or person. Public personalities like Mark Zuckerberg are particularly exposed to criticism, being positive or negative depending on the current progress or discoveries about their companies. But do the opinions in the quotes really reflect the rise of fall of someone' career ? Moreover, do the opinions of specific groups of people indicate an increasing in the company' success ?
 

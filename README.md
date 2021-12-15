@@ -3,37 +3,29 @@
 
 ## Abstract (to be improved into something more convincing)
 
-How does the success of someone's career relate to the opinions of other people ? Can we estimate whether the 
-career of a public person is rather at its lowest or its highest only given the quotes mentioning this person 
-or her/his companies, etc over time ? Also, can we clearly identify "types" of people (e.g. political orientation, etc) systematically
-talk negatively/positively about this person ? Let's take Elon Musk for example. Few years ago, Tesla and SpaceX were not in a very good shape and we could imagine that
-quotes about him or his companies were expressing rather negative opinions. But is it really what the data tell us ?
-We will look at the quotes mentioning Elon Musk or its companies and try to identify the different cluster of 
-people that are criticizing him or supporting him. Throughout the README, we take Elon Musk as example but this easily generalizes to other personalities (such as Mark Zuckerberg).
+With the world getting more and more connected, in particular the domain of news and journalism, we get access to opinions of huge amount of people. These opinions can express negative, positive or simply neutral sentiments about a subject or person. Public personalities like Mark Zuckerberg are particularly exposed to criticism, being positive or negative depending on the current progress or discoveries about their companies. But do the opinions in the quotes really reflect the rise of fall of someone' career ? Moreover, do the opinions of specific groups of people indicate an increasing in the company' success ?
 
 ## Research questions
 
-- How do the sentiments in the quotes mentioning Elon Musk or his companies over time ?
-- Among people criticizing/supporting Elon Musk, can we identify specific groups of people ? For example,
+- How do the sentiments in the quotes mentioning Mark Zuckerberg or his companies over time ?
+- Among people criticizing/supporting Mark Zuckerberg, can we identify specific groups of people ? For example,
   are the people criticizing him mainly old, or coming from specific locations ?
 - Are the opinions of other people correlated with the actual success of his career/his companies ?
-- Are the opinions of other people about Tesla (or SpaceX) correlated with the opinions about Musk himself ? I.e.
-  is Elon Musk viewed by the public "only" through his companies ?
 - Optional : Can we identify authors whose opinions have great influence on the stock prices of the companies ?
 - Optional : Do the above analysis also apply to personalities from other domain, such as the politics and Trump ?
 
 ## Sub-tasks
 
-- Filter the quotes talking about Elon Musk, Tesla, SpaceX using Spacy.
+- Filter the quotes talking about Mark Zuckerberg or Facebook using Spacy.
 - Determine the sentiments in these quotes using NLTK.
 - Find the characteristics of the authors of these quotes, to be able to group them later on.
 - Try to identify different groups of people among the authors criticizing vs supporting him.
-- Aggregate the stock values of Tesla by month (to be verified).
-- Plots the relations of the stock values and the evolution of the opinions about Elon Musk and also
+- Aggregate the stock values of Facebook by month (to be verified).
+- Plots the relations of the stock values and the evolution of the opinions about Mark Zuckerberg and also
   the number of quotes made about him during each month.
 - Try to identify specific authors (or group of authors) whose opinions influence a lot the future stock prices
-  of e.g. Tesla.
-- Differentiate the quotes talking about Tesla/SpaceX vs Elon Musk itself. Determine whether the opinions
+  of e.g. Facebook.
+- Differentiate the quotes talking about Facebook vs Mark Zuckerberg itself. Determine whether the opinions
   in each of these groups evolve similarly over time.
 
 
@@ -41,7 +33,7 @@ people that are criticizing him or supporting him. Throughout the README, we tak
 
 In addition to the given dataset, we will use:
 - Wikidata parquet file provided in order to extract information about quoters from the Quotebank dataset (for instance the age, sex and origin).
-- A dataset of stock prices coming from nasdaq.com (for instance [for Tesla](https://www.nasdaq.com/market-activity/stocks/tsla/historical)) for each company owned by Elon Musk.
+- A dataset of stock prices coming from nasdaq.com (for instance [for Facebook](https://www.nasdaq.com/market-activity/stocks/fb/historical) for each company owned by Mark Zuckerberg.
 
 ## Methods
  
@@ -91,7 +83,7 @@ Alessio:
 
 Florian :
 - 27.11-04.12 : 
-    - Filter the quotes about Elon Musk using Spacy.
+    - Filter the quotes about Mark Zuckerberg using Spacy.
 - 04.12-11.12 :
     - Generalize extraction method to filter quotes from any person/company.
     - Extract what entities were found in each quotes.

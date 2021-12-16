@@ -441,6 +441,7 @@ def plot_cluster_pie(df_people_assigned_cluster, cluster_id, filename=''):
       - prop: Minimal proportion to be display
       - func: Function to rename the columns
     """
+    from group import count_different_values
     df = count_different_values(df_people_assigned_cluster, f'speaker_{attribut}').sort_values('count', ascending=False)
     attribut = attribut[0].upper() + attribut[1:]
     df['index'] = df.index

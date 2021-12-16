@@ -42,6 +42,7 @@ We will use [a sentiment analysis classifier from the NLTK library](https://www.
 - Named Entity Recognition:
 In order to extract the names quoted in our dataset, we will use NLP with the NLTK library, in combination with another library called spaCy, a Named Entity Recognition tool.
   The method we will follow is described [here](https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da). This model should be able to output the name of the people mentionned in the quotes (if any) and extract those containing at least one person to perform analyses.
+- We will use regression analyses to extract trends between sentiments of quotes and the stock prices.
 - We plan on finishing the exploratory data analysis and implementing the other parts at the beginning of milestone 3.
   We will apply these towards the middle/end of milestone 3 on the cleaned data.
   

@@ -31,7 +31,7 @@ With the world getting more and more connected, in particular the domain of news
 
 In addition to the given dataset, we will use:
 - Wikidata parquet file provided in order to extract information about quoters from the Quotebank dataset (for instance the age, sex and origin).
-- A dataset of stock prices coming from the [Nasdaq Market](https://www.nasdaq.com/market-activity/stocks/fb/historical) (for instance [for Facebook](https://www.nasdaq.com/market-activity/stocks/fb/historical) for each company owned by Mark Zuckerberg.
+- A dataset of stock prices coming from the Nasdaq Market (for instance [for Facebook](https://www.nasdaq.com/market-activity/stocks/fb/historical)) for each company owned by Mark Zuckerberg.
 
 ## Methods
  

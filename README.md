@@ -76,6 +76,7 @@ Cyrille :
 - 04.12-11.12 :
   - Load and aggregate the stock prices data.
   - Look at correlations with the polarity scores.
+  - Regression analysis on groups
   - Prepare the website, start writing the introduction, skeleton, etc for the data story.
 - 11.12-17.12 : Data story, writing the final notebook.
 

@@ -47,7 +47,7 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
   
 ## File structure of the project
 ```
-├── helpers                             # Compiled files (alternatively `dist`)
+├── helpers                             
       ├── exploration.py                # Functions to visualise quote features of the dataset 
       ├── extract.py                    # Functions to perform Named Entity Recognition to extract quotes about Mark Zuckerberg and Facebook
       ├── group.py                      # Clusters, distance computations, pre-processing of quotes and people related functions

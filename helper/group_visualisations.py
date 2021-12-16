@@ -40,10 +40,12 @@ def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",belon
 
     df2 = df.copy()
     df2['cat'] = "Other"
-    values_copy = list_values.copy()
+    values_copy = []
     for val in list_values:
-        mask = df2.apply(lambda x: belonging_fct(val, x[col]), axis=1)
-        df2.loc[mask, 'cat'] = str(val)
+      text = str(val)[0].upper() + str(val)[1:]
+      mask = df2.apply(lambda x: belonging_fct(val, x[col]), axis=1)
+      df2.loc[mask, 'cat'] = text
+      values_copy.append(text)
     # Add the other category to the plot.
     values_copy.append("Other")
 
@@ -62,7 +64,7 @@ def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",belon
 
     fig = go.Figure()
     # figure size in inches
-    for i, name in enumerate(list_values):
+    for i, name in enumerate(values_copy):
         cur_data = category_by_month[category_by_month['cat'] == str(name)]
         fig.add_trace(go.Scatter(x=cur_data['date'], y=cur_data['prop'],
                                  fillcolor=px.colors.qualitative.Set3[i + 2], name=str(name),
@@ -97,7 +99,7 @@ def plot_mean_sentiment_by_attr_value(df, col, col_title, list_values, legend_ti
       - investigated_person: The person we are currently investigating
       - use_plotly: If we need to use plotly instead of seaborn
       - filename: The file name under which we should save the figure
-  """
+    """
     df['assigned_value'] = 'Other'
     for index, val in enumerate(list_values):
         mask = df.apply(lambda row: belonging_fct(val, row[col]), axis=1)
@@ -118,14 +120,15 @@ def plot_mean_sentiment_by_attr_value(df, col, col_title, list_values, legend_ti
 
         fig = go.Figure()
         for i, val in enumerate(list_values):
+            text = str(val)[0].upper() + str(val)[1:]
             cur_data=mean_compound_month[mean_compound_month['assigned_value'] == i]
             fig.add_trace(
                 go.Scatter(x=cur_data['date'],
                            y=cur_data['mean'],
                            marker=dict(color=px.colors.qualitative.Set3[i + 2]),
-                           fillcolor=px.colors.qualitative.Set3[i + 2], name=f'{val}',
+                           fillcolor=px.colors.qualitative.Set3[i + 2], name=f'{text}',
                            text=cur_data.apply(
-                               lambda x: format_text(x, val), axis=1).to_list(),
+                               lambda x: format_text(x, text), axis=1).to_list(),
                            hoverinfo='text'))
         fig.update_layout(title={
             'text': f'Mean compound score of quotes talking about {investigated_person} by {col_title}',
@@ -152,7 +155,7 @@ def plot_mean_sentiment_by_attr_value(df, col, col_title, list_values, legend_ti
         plt.xlabel("Time")
         plt.ylabel('Mean compound score')
         plt.show()
-
+        
 
 def plot_proportion_over_year(df, col, investigated_person="Mark Zuckerberg", investigated_attributes="ages"):
     """
@@ -403,7 +406,7 @@ def plot_box_plot_mean_compound(df, col, list_values, col_name,
         fig.add_trace(
             go.Box(y=df2[df2['cat_boxplot'] == str(val)]['compound'],
                    marker=dict(color=px.colors.qualitative.Set3[i + 2]),
-                   fillcolor=color2, name=f'{val}'))
+                   fillcolor=color2, name=f'{(str(val)[0].upper() + str(val)[1:])}'))
     fig.update_layout(
         title={
             'text': f'Mean compound score of quotes talking about {investigated_person} by {col_name}',

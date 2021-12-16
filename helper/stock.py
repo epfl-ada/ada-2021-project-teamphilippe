@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import seaborn as sns
-
+import plotly.express as px
+import plotly.graph_objects as go
 
 def load_stock_csv(file, first_date=pd.to_datetime('2015-01-01', format='%Y-%m-%d'),
                    last_date=pd.to_datetime('2020-04-16', format='%Y-%m-%d')):
@@ -51,22 +52,40 @@ def aggregate_stock_by_period(df, period='%Y-%m'):
   return df.groupby(df.index.strftime(period)).mean()
 
 
-def plot_stocks_by_period(df, stock):
+def plot_stocks_by_period(df, stock, filename=''):
   """
   Plot the avg open/close price by period.
 
   Parameters:
       df : df of the aggregated stock prices
+      stock : 
+      filename : The file name under which we should save the figure
   """
+  fig = go.Figure()
 
-  fig, ax = plt.subplots(1, figsize=(14, 5))
+  text = []
+  index = []
+  for date, val in zip(df.index, df['avg_op_cl'].to_list()):
+    year, week = date.split('-')
+    text.append(f'{(round(val, 4))}<br>Date:{week} week of {year}')
+    index.append(f'{week} week of {year}')
 
-  sns.lineplot(data=df['avg_op_cl'], ax=ax)
-  plt.title(f'Evolution of stock prices of {stock}')
-  plt.xticks(rotation=90)
-  plt.ylabel('Avg between open and close prices [$]')
-  ax.xaxis.set_major_locator(plt.MaxNLocator(70))
-  plt.show()
+  fig.add_trace(go.Scatter(x=index, y=df['avg_op_cl'],
+                            text=text,
+                            hoverinfo='text'
+                          ))
+  
+  fig.update_layout(title={
+        'text': f'Evolution of stock prices of {stock}',
+        'y': 0.9,
+        'x': 0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'},
+        yaxis_title='Avg between open and close prices [$]',
+        xaxis_title='Date')
+  fig.show()
+  if filename!='':
+    fig.write_html(filename)
 
 
 def cross_correlation(ts_x, ts_y, lag=0):

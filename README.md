@@ -50,8 +50,8 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
 ├── helpers                             # Compiled files (alternatively `dist`)
       ├── exploration.py                # Functions to visualise quote features of the dataset 
       ├── extract.py                    # Functions to perform Named Entity Recognition to extract quotes about Mark Zuckerberg and Facebook
-      ├── group_visualisations.py       # Functions to visualise grouping on attributes and clusters (Plotly and seaborn)
       ├── group.py                      # Clusters, distance computations, pre-processing of quotes and people related functions
+      ├── group_visualisations.py       # Functions to visualise grouping on attributes and clusters (Plotly and seaborn)
       ├── regression.py                 # Functions to perform regression analysis automatically stats models as well as visualise the response of input variables with the outcomes.
       ├── sentiment.py                  # Functions to predict, aggregate and visualise sentiments in the quotes
       ├── sentiment_visualisations.py   # Functions to visualise sentiment (Plotly and seaborn)
@@ -59,10 +59,15 @@ In order to extract the names quoted in our dataset, we will use NLP with the NL
       ├── utility.py                    # Functions to handle the whole Quotebank data set (stream processing functions), preprocess it and sample from it
       ├── wikidata.py                   # Wikidata related functions to add speaker information to the quotes with an identified speaker
 ├── TeamPhilipe-Project-Notebook.ipynb  # Notebook containing the execution of all the functions, comments and visualisations
-├── Data story                          # Save of the data story web site
+├── requirements.txt                    # List of all the package (and version) needed to run our project
 └── README.md
 ```
-
+## Package installation
+To install all the required packages, you can simply run 
+```
+pip install -r requirements.txt
+```
+in the cloned repository.
 ## Timeline and Organisation
 Cyrille :
 - 27.11-04.12 :

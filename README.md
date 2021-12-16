@@ -3,16 +3,14 @@
 
 ## Abstract 
 
-With the world getting more and more connected, in particular the domain of news and journalism, we get access to opinions of huge amount of people. These opinions can express negative, positive or simply neutral sentiments about a subject or person. Public personalities like Mark Zuckerberg are particularly exposed to criticism, being positive or negative depending on the current progress or discoveries about their companies. But do the opinions in the quotes really reflect the rise of fall of someone' career ? Moreover, do the opinions of specific groups of people indicate an increasing in the company' success ?
+With the world getting more and more connected, in particular the domain of news and journalism, we get access to opinions of huge amount of people. These opinions can express negative, positive or simply neutral sentiments about a subject or person. Public personalities like Mark Zuckerberg are particularly exposed to criticism, being positive or negative depending on the current progress or discoveries about their companies. But do the opinions in the quotes really reflect the rise of fall of someone's career ? Moreover, do the opinions of specific groups of people indicate an increasing in the company' success ?
 
 ## Research questions
 
 - How do the sentiments in the quotes mentioning Mark Zuckerberg or his companies over time ?
-- Among people criticizing/supporting Mark Zuckerberg, can we identify specific groups of people ? For example,
-  are the people criticizing him mainly old, or coming from specific locations ?
+- Among groups based on specific characteristics, are there some that systematically criticize/support him ?
 - Are the opinions of other people correlated with the actual success of his career/his companies ?
-- Optional : Can we identify authors whose opinions have great influence on the stock prices of the companies ?
-- Optional : Do the above analysis also apply to personalities from other domain, such as the politics and Trump ?
+- Can we identify authors whose opinions have great influence on the stock prices of the companies ?
 
 ## Sub-tasks
 
@@ -43,8 +41,6 @@ We will use [a sentiment analysis classifier from the NLTK library](https://www.
 In order to extract the names quoted in our dataset, we will use NLP with the NLTK library, in combination with another library called spaCy, a Named Entity Recognition tool.
   The method we will follow is described [here](https://towardsdatascience.com/named-entity-recognition-with-nltk-and-spacy-8c4a7d88e7da). This model should be able to output the name of the people mentionned in the quotes (if any) and extract those containing at least one person to perform analyses.
 - We will use regression analyses to extract trends between sentiments of quotes and the stock prices.
-- We plan on finishing the exploratory data analysis and implementing the other parts at the beginning of milestone 3.
-  We will apply these towards the middle/end of milestone 3 on the cleaned data.
   
 ## File structure of the project
 ```

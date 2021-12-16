@@ -1,5 +1,5 @@
 # Project : Milestone 3
-# Are the opinions in news quotes related to the success of a company or entrepreneur ?
+# Opinions in quotes and success : do they relate ?
 
 ## Abstract 
 

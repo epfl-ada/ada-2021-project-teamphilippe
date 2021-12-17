@@ -17,14 +17,12 @@ With the world getting more and more connected, in particular the domain of news
 - Filter the quotes talking about Mark Zuckerberg or Facebook using Spacy.
 - Determine the sentiments in these quotes using NLTK.
 - Find the characteristics of the authors of these quotes, to be able to group them later on.
-- Try to identify different groups of people among the authors criticizing vs supporting him.
+- Try to identify subgroups whose always support / criticize him.
 - Aggregate the stock values of Facebook by month (to be verified).
 - Plots the relations of the stock values and the evolution of the opinions about Mark Zuckerberg and also
   the number of quotes made about him during each month.
 - Try to identify specific authors (or group of authors) whose opinions influence a lot the future stock prices
   of e.g. Facebook.
-- Differentiate the quotes talking about Facebook vs Mark Zuckerberg itself. Determine whether the opinions
-  in each of these groups evolve similarly over time.
 
 
 ## Additional datasets

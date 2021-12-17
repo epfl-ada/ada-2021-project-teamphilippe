@@ -65,6 +65,10 @@ To install all the required packages, you can simply run
 pip install -r requirements.txt
 ```
 in the cloned repository.
+
+## Data story
+You can find our data story [on this link](https://cpittet.github.io/ada-teamphilippe/)
+
 ## Timeline and Organisation
 Cyrille :
 - 27.11-04.12 :

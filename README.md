@@ -5,6 +5,9 @@
 
 With the world getting more and more connected, in particular the domain of news and journalism, we get access to opinions of huge amount of people. These opinions can express negative, positive or simply neutral sentiments about a subject or person. Public personalities like Mark Zuckerberg are particularly exposed to criticism, being positive or negative depending on the current progress or discoveries about their companies. But do the opinions in the quotes really reflect the rise of fall of someone's career ? Moreover, do the opinions of specific groups of people indicate an increasing in the company' success ?
 
+## Data story
+You can find our data story [on this link](https://cpittet.github.io/ada-teamphilippe/).
+
 ## Research questions
 
 - How do the sentiments in the quotes mentioning Mark Zuckerberg or his companies over time ?
@@ -63,9 +66,6 @@ To install all the required packages, you can simply run
 pip install -r requirements.txt
 ```
 in the cloned repository.
-
-## Data story
-You can find our data story [on this link](https://cpittet.github.io/ada-teamphilippe/).
 
 ## Timeline and Organisation
 Cyrille :

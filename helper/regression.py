@@ -211,7 +211,7 @@ def plot_regression_results(res, filename=""):
                  color='color', color_discrete_map={'negative coefficient': px.colors.qualitative.Set3[3], 'positive coefficient': px.colors.qualitative.Set3[4], 'insignificant coefficient': px.colors.qualitative.Set3[8]},
                  title='Regression coefficients', category_orders={'Feature': order}, height=700)
     fig.update_layout(title={
-      'text': 'Proportion of each sentiment in each cluster',
+      'text': 'Regression coefficients',
       'y': 0.9,
       'x': 0.5,
       'xanchor': 'center',

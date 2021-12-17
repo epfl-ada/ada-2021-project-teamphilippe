@@ -21,8 +21,10 @@ def cumsum_prop(group):
     return group
 
 
-def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",belonging_fct=lambda x, lst: lst is not None and x in lst,
-                                     investigated_person="Mark Zuckerberg", investigated_attributes="continent", filename=""):
+def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",
+                                     belonging_fct=lambda x, lst: lst is not None and x in lst,
+                                     investigated_person="Mark Zuckerberg", investigated_attributes="continent",
+                                     filename=""):
     """
     Plot the proportion of author by the give
     Parameters:
@@ -42,10 +44,10 @@ def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",belon
     df2['cat'] = "Other"
     values_copy = []
     for val in list_values:
-      text = str(val)[0].upper() + str(val)[1:]
-      mask = df2.apply(lambda x: belonging_fct(val, x[col]), axis=1)
-      df2.loc[mask, 'cat'] = text
-      values_copy.append(text)
+        text = str(val)[0].upper() + str(val)[1:]
+        mask = df2.apply(lambda x: belonging_fct(val, x[col]), axis=1)
+        df2.loc[mask, 'cat'] = text
+        values_copy.append(text)
     # Add the other category to the plot.
     values_copy.append("Other")
 
@@ -66,10 +68,11 @@ def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",belon
     # figure size in inches
     for i, name in enumerate(values_copy):
         cur_data = category_by_month[category_by_month['cat'] == str(name)]
-        fig.add_trace(go.Scatter(x=cur_data['date'], y=cur_data['prop'],
-                                 fillcolor=px.colors.qualitative.Set3[i + 2], name=str(name),
-                                 text=cur_data.apply(lambda x: format_text(x, name), axis=1).to_list(),
-                                 hoverinfo='text'))
+        if not cur_data.empty:
+            fig.add_trace(go.Scatter(x=cur_data['date'], y=cur_data['prop'],
+                                     fillcolor=px.colors.qualitative.Set3[i + 2], name=str(name),
+                                     text=cur_data.apply(lambda x: format_text(x, name), axis=1).to_list(),
+                                     hoverinfo='text'))
 
     fig.update_layout(title={
         'text': f'Proportion of quotes talking about {investigated_person} by {investigated_attributes}',
@@ -77,13 +80,13 @@ def plot_proportion_over_ages_plotly(df, col, list_values, legend_title="",belon
         'x': 0.5,
         'xanchor': 'center',
         'yanchor': 'top'},
-        legend_title =legend_title,
+        legend_title=legend_title,
         yaxis_title="Proportion of the quotes",
         xaxis_title="Date")
     fig.show()
-    
+
     # Save plot
-    if(filename!=''):
+    if (filename != ''):
         fig.write_html(filename)
 
 

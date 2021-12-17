@@ -67,7 +67,7 @@ pip install -r requirements.txt
 in the cloned repository.
 
 ## Data story
-You can find our data story [on this link](https://cpittet.github.io/ada-teamphilippe/)
+You can find our data story [on this link](https://cpittet.github.io/ada-teamphilippe/).
 
 ## Timeline and Organisation
 Cyrille :

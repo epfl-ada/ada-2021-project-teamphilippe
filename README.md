@@ -1,5 +1,5 @@
 # Project : Milestone 3
-# Opinions in quotes and success : do they relate ?
+# Opinions in quotes and Mark Zuckerberg success : do they relate ?
 
 ## Abstract 
 
